@@ -1,0 +1,19 @@
+spring:
+  data:
+    redis:
+      cluster:
+        nodes:
+         - 192.168.56.100:7001
+         - 192.168.56.100:7002
+         - 192.168.56.100:7003
+        max-redirects: 2 # 失败最大重定向 2 次
+      database: 0
+      lettuce:
+        pool:
+          max-active: 8
+          min-idle: 0
+          max-idle: 8
+          max-wait: -1ms
+      redisson:
+        config: classpath:redisson-cluster.yml
+
